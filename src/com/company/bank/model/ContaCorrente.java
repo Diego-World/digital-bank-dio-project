@@ -12,11 +12,10 @@ public class ContaCorrente extends Conta{
     //
     @Override
     public void sacar(double valor) {
-        valor += taxaSaque;
         if(getSaldo() >= (valor+taxaSaque)){
             saldo -= (valor+taxaSaque);
         }else{
-            saldo -= valor;
+            System.out.println("Operação inválida: Saque maior que o saldo!");
         }
     }
 
