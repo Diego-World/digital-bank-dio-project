@@ -1,16 +1,23 @@
+import com.company.bank.model.Cliente;
+import com.company.bank.model.Conta;
+import com.company.bank.model.ContaCorrente;
+import com.company.bank.model.ContaPoupança;
+
 public class Main {
     public static void main(String[] args) {
 
-        Cliente venilton = new Cliente();
-        venilton.setNome("Venilton");
+        Cliente diego = new Cliente();
+        diego.setNome("Diego");
 
-        Conta cc = new ContaCorrente(venilton);
-        Conta poupanca = new ContaPoupança(venilton);
+        Conta ccDiego = new ContaCorrente(diego);
 
-        cc.depositar(100);
-        cc.transferir(100, poupanca);
 
-        cc.imprimirExtrato();
-        poupanca.imprimirExtrato();
+        ccDiego.depositar(300);
+        ccDiego.sacar(100);
+
+        ccDiego.imprimirExtrato();
+
+        System.out.println(ccDiego);
+
     }
 }

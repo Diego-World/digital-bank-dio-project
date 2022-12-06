@@ -1,3 +1,5 @@
+package com.company.bank.model;
+
 public interface IConta{
 
     // Schedule job metodo Deposito!!!

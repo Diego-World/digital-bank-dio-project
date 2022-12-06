@@ -1,4 +1,4 @@
-
+package com.company.bank.model;
 
 public class ContaPoupança extends Conta{
 
@@ -8,7 +8,7 @@ public class ContaPoupança extends Conta{
 
     @Override
     public void imprimirExtrato() {
-        System.out.println("=== Extrato Conta Poupança ===");
+        System.out.println("=== Conta Poupança ===");
         super.imprimirInfosComuns();
     }
 }

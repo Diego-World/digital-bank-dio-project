@@ -1,3 +1,7 @@
+package com.company.bank.controller;
+
+import com.company.bank.model.Conta;
+
 import java.util.List;
 
 public class Banco {
