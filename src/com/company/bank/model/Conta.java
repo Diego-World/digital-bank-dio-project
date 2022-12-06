@@ -2,12 +2,14 @@ package com.company.bank.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Getter @Setter
+@Getter @Setter @ToString
 public abstract class Conta implements IConta{
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
 
+    private static double TAXA_SAQUE_CC = 2.50;
 
     // Anotações Lombok GET e SET
     protected int agencia;
@@ -21,9 +23,17 @@ public abstract class Conta implements IConta{
         this.cliente = cliente;
     }
 
+    /*
+    *  Implementado condição de saque ( Saldo deve ser suficiente para saque )
+    *
+    *  */
     @Override
     public void sacar(double valor) {
-        saldo -= valor;
+        if(getSaldo() > valor){
+            valor -= saldo;
+        }else{
+            System.out.println("Operação inválida: Saque maior que o saldo!");
+        }
     }
 
     @Override

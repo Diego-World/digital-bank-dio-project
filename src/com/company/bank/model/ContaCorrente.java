@@ -9,11 +9,17 @@ public class ContaCorrente extends Conta{
         super(cliente);
     }
 
+    //
     @Override
     public void sacar(double valor) {
-        saldo -= taxaSaque;
-        saldo -= valor;
+        valor += taxaSaque;
+        if(getSaldo() >= (valor+taxaSaque)){
+            saldo -= (valor+taxaSaque);
+        }else{
+            saldo -= valor;
+        }
     }
+
 
     @Override
     public void imprimirExtrato() {

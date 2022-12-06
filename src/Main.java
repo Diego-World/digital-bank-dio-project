@@ -13,11 +13,10 @@ public class Main {
 
 
         ccDiego.depositar(300);
-        ccDiego.sacar(100);
+        ccDiego.sacar(297.50);
 
         ccDiego.imprimirExtrato();
 
-        System.out.println(ccDiego);
 
     }
 }
