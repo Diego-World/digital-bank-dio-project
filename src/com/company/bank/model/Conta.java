@@ -9,8 +9,6 @@ public abstract class Conta implements IConta{
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
 
-    private static double TAXA_SAQUE_CC = 2.50;
-
     // Anotações Lombok GET e SET
     protected int agencia;
     protected int numeroConta;
@@ -41,10 +39,19 @@ public abstract class Conta implements IConta{
         saldo += valor;
     }
 
+    /*
+     *  Implementado condição de transferência ( saldo deve ser suficiente para transferência )
+     *
+     *  */
+
     @Override
     public void transferir(double valor, IConta contaDestino) {
-        this.sacar(valor);
+        if(getSaldo() >= valor){
         contaDestino.depositar(valor);
+        saldo -= valor;
+        }else{
+            System.out.println("Operação inválida: Transferência maior que o saldo!");
+        }
     }
 
     protected void imprimirInfosComuns() {

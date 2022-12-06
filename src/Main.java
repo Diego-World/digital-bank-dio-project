@@ -10,12 +10,14 @@ public class Main {
         diego.setNome("Diego");
 
         Conta ccDiego = new ContaCorrente(diego);
+        Conta poupançaDiego = new ContaPoupança(diego);
 
 
-        ccDiego.depositar(300);
-        ccDiego.sacar(298.50);
+        ccDiego.depositar(-500);
+        //ccDiego.transferir(500,poupançaDiego);
 
         ccDiego.imprimirExtrato();
+        poupançaDiego.imprimirExtrato();
 
 
     }
